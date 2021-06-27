@@ -18,9 +18,7 @@ namespace SimplexConsole
 
             //x_1 x_2 entfernen
             var zielFunk = Regex.Replace(zielfunktionAusDerKonsole, "x_[1-9]+", "");
-
             List<double> zielFunktionsWerte = zielFunk.Split("+").Select(m => double.Parse(m)).ToList();
-
 
             //Restriktionen entgegennehmen
             Console.WriteLine("Nichtnegativitätsbedingungen wurden automatisch gesetzt.");
@@ -56,57 +54,22 @@ namespace SimplexConsole
                 {
                     if (j == index)
                         currentRestriktion.Add(1);
-
                     else
                         currentRestriktion.Add(0);
                 }
                 currentRestriktion.Add(lastElement);
                 tabelle.Add(currentRestriktion);
             }
-            Console.WriteLine("Anzahl von Variablen: " + anzahlVonVariablen);
-
             //Add Schlupfvariablen in Zielfunktion
             for (var j = 0; j < anzahlVonRestriktionen; j++)
             {
                 zielFunktionsWerte.Add(0);
             }
             zielFunktionsWerte.Add(0);
-
             tabelle.Add(zielFunktionsWerte);
-
-            //eine matrize bzw.eine 2 Liste die eine Liste von double Werte enthält mit variablen construiren
-            //finde pivotspalte
-            //finde pivotzeile
-            //normalize pivotzeile
-            //Gauß eliminationsverfahren anwenden (alle Elemente außer dem Pivotelemen in Pivotspalte auf null)
-
-            //prüfen ob in der letzten (Zielfunktionszeile nur nullen und negative werte vorkommen)
-
-            //Falls ja die Lösung ablesen
-            //Falls nein nochmal zu dem neuen table den Algorithmus anwenden
-
-
-
-            //double[,] table = new double[4, 6] {
-            //    { 0.1, 0.5, 1, 0, 0, 30 },
-            //    { 10, 20, 0, 1, 0, 1500 },
-            //    { 1500, 500, 0, 0, 1, 150000 },
-            //    { 300, 250, 0, 0, 0, 0}
-            //};
-
-            //var restriktion1 = new List<double> { 0.1, 0.5, 1, 0, 0, 30 };
-            //var restriktion2 = new List<double> { 10, 20, 0, 1, 0, 1500 };
-            //var restriktion3 = new List<double> { 1500, 500, 0, 0, 1, 150000 };
-            //var zielfunktion = new List<double> { 300, 250, 0, 0, 0, 0 };
-            //var list = new List<List<double>>();
-            //list.Add(restriktion1);
-            //list.Add(restriktion2);
-            //list.Add(restriktion3);
-            //list.Add(zielfunktion);
 
             var optimized = Optimize(tabelle);
             var optimizedValues = GetOptimizedValues(optimized, 2);
-            // Console.WriteLine($"Optimale Lösung: { (Math.Abs(optimized.Last().ToList().Last()))}");
             LösungAusgeben(optimizedValues);
         }
         private static List<List<double>> Optimize(List<List<double>> liste)
@@ -121,8 +84,6 @@ namespace SimplexConsole
 
             var pivotzeilenIndex = FindPivotzeilenIndex(pivotSpalte, b);
 
-            //NormalizePivotZeile(list, pivotZeilenIndex, pivotspaltenIndex);
-
             NormalizePivotZeile(liste, pivotzeilenIndex, pivotspaltenIndex);
             //Alle Pivotspaltenelemente außer dem Pivotelement auf null bringen
             GaussAnwenden(liste, pivotzeilenIndex, pivotspaltenIndex);
@@ -132,7 +93,6 @@ namespace SimplexConsole
             {
                 Optimize(liste);
             }
-
             return liste;
         }
         private static Dictionary<string, double> GetOptimizedValues(List<List<double>> liste, int countOfVariables)
