@@ -1,0 +1,13 @@
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\bin\Debug\netcoreapp3.1\SimplexConsole.exe
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\bin\Debug\netcoreapp3.1\SimplexConsole.deps.json
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\bin\Debug\netcoreapp3.1\SimplexConsole.runtimeconfig.json
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\bin\Debug\netcoreapp3.1\SimplexConsole.runtimeconfig.dev.json
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\bin\Debug\netcoreapp3.1\SimplexConsole.dll
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\bin\Debug\netcoreapp3.1\SimplexConsole.pdb
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\obj\Debug\netcoreapp3.1\SimplexConsole.csprojAssemblyReference.cache
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\obj\Debug\netcoreapp3.1\SimplexConsole.AssemblyInfoInputs.cache
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\obj\Debug\netcoreapp3.1\SimplexConsole.AssemblyInfo.cs
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\obj\Debug\netcoreapp3.1\SimplexConsole.csproj.CoreCompileInputs.cache
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\obj\Debug\netcoreapp3.1\SimplexConsole.dll
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\obj\Debug\netcoreapp3.1\SimplexConsole.pdb
+C:\Users\Vladimir\source\repos\SimplexConsole\SimplexConsole\obj\Debug\netcoreapp3.1\SimplexConsole.genruntimeconfig.cache
