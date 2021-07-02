@@ -89,6 +89,7 @@ namespace SimplexConsole
             GaussAnwenden(liste, pivotzeilenIndex, pivotspaltenIndex);
 
             var zielfunktionszeile = liste.Last();
+            //Solange in der Zielfunktionszeile noch negative Werte vorkommen, den Algorithmus anwenden
             while (zielfunktionszeile.Any(m => m < 0))
             {
                 Optimize(liste);
@@ -147,13 +148,10 @@ namespace SimplexConsole
             for (var index = 0; index < b.Count - 1; index++)
             {
                 minIndex = index;
-                //if (pivotspalte[index] != 0)
-                //{
                 var currentItem = b[index] / pivotspalte[index];
                 var nextItem = b[index + 1] / pivotspalte[index + 1];
                 if (nextItem < currentItem)
                     minIndex = index + 1;
-                // }
             }
 
             var pivotzeilenEl = pivotspalte.ElementAt(minIndex);
