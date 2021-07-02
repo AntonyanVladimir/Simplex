@@ -18,7 +18,7 @@ namespace SimplexConsole
 
             //x_1 x_2 entfernen
             var zielFunk = Regex.Replace(zielfunktionAusDerKonsole, "x_[1-9]+", "");
-            List<double> zielFunktionsWerte = zielFunk.Split("+").Select(m => double.Parse(m)).ToList();
+            List<double> zielFunktionsWerte = zielFunk.Split("+").Select(m => (-1)*double.Parse(m)).ToList();
 
             //Restriktionen entgegennehmen
             Console.WriteLine("Nichtnegativitätsbedingungen wurden automatisch gesetzt.");
@@ -89,7 +89,7 @@ namespace SimplexConsole
             GaussAnwenden(liste, pivotzeilenIndex, pivotspaltenIndex);
 
             var zielfunktionszeile = liste.Last();
-            while (zielfunktionszeile.Any(m => m > 0))
+            while (zielfunktionszeile.Any(m => m < 0))
             {
                 Optimize(liste);
             }
@@ -135,7 +135,7 @@ namespace SimplexConsole
         {
             var zielfunktionsZeile = list.Last();
 
-            var pivotspaltenEl = list.Last().Where(m => m > 0).Max();
+            var pivotspaltenEl = list.Last().Where(m => m < 0).Min();
 
             var pivotspaltenIndex = zielfunktionsZeile.IndexOf(pivotspaltenEl);
 
